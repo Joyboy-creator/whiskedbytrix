@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Only YOUR admin login counts. Replace the email below with the one you create in Firebase Authentication.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'YOUR_ADMIN_EMAIL@example.com';
+    }
+
+    // Menu: everyone can read it, only you can change it.
+    match /menu/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Orders: anyone can PLACE a (well-formed) order, only you can read or change them.
+    match /orders/{orderId} {
+      allow create: if request.resource.data.status == 'new'
+        && request.resource.data.keys().hasOnly(['id','createdAt','status','name','phone','method','address','payment','notes','items','subtotal','deliveryFee','total'])
+        && request.resource.data.keys().hasAll(['id','createdAt','status','name','phone','method','address','payment','notes','items','subtotal','deliveryFee','total'])
+        && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 80
+        && request.resource.data.phone is string && request.resource.data.phone.size() <= 25
+        && request.resource.data.address is string && request.resource.data.address.size() <= 300
+        && request.resource.data.notes is string && request.resource.data.notes.size() <= 300
+        && request.resource.data.method in ['delivery', 'pickup']
+        && request.resource.data.items is list && request.resource.data.items.size() > 0 && request.resource.data.items.size() <= 30
+        && request.resource.data.total is number && request.resource.data.total >= 0 && request.resource.data.total < 100000;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

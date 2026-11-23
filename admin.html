@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Whisked by Trix</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FEF6E1">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preload" href="assets/fonts/mali-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/admin.css?v=9">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <span class="brand"><img src="assets/logo-small.jpg" alt="" width="36" height="36"><span><span class="b1">whisked</span> <span class="b2">by trix</span></span> <span class="admin-tag">admin</span></span>
+      <div class="nav-links" id="header-actions" hidden>
+        <button type="button" class="icon-btn" id="sound-toggle" aria-pressed="true" title="Toggle new-order sound">🔔</button>
+        <button type="button" class="btn-outline small" id="signout-btn">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <div id="mode-banner" class="banner" hidden></div>
+
+    <!-- LOGIN -->
+    <section id="login-view" class="login-card" hidden>
+      <h2>Admin sign in</h2>
+      <p class="muted-text" id="login-hint">Sign in to manage orders and your menu.</p>
+      <form id="login-form">
+        <div class="form-group" id="email-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" autocomplete="current-password" required>
+        </div>
+        <p class="form-error" id="login-error" role="alert" hidden></p>
+        <button type="submit" class="btn-primary full-width" id="login-btn">Sign in</button>
+      </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dash-view" hidden>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="tab active" id="tab-orders" aria-selected="true" data-tab="orders">Orders <span class="count" id="orders-count" hidden>0</span></button>
+        <button type="button" role="tab" class="tab" id="tab-menu" aria-selected="false" data-tab="menu">Menu</button>
+      </div>
+
+      <!-- Orders -->
+      <div id="panel-orders">
+        <div class="stats" id="stats"></div>
+        <div class="chips" id="order-filters">
+          <button type="button" class="chip active" data-filter="active">Active</button>
+          <button type="button" class="chip" data-filter="done">Done</button>
+          <button type="button" class="chip" data-filter="all">All</button>
+        </div>
+        <div id="orders-list" class="orders-list"></div>
+      </div>
+
+      <!-- Menu -->
+      <div id="panel-menu" hidden>
+        <div class="menu-toolbar">
+          <p class="muted-text">Changes appear on your public menu right away. Toggle <strong>Available</strong> off to mark a drink sold out.</p>
+          <div class="toolbar-btns">
+            <button type="button" class="btn-primary small" id="add-drink-btn">＋ Add drink</button>
+          </div>
+        </div>
+        <div id="restore-bar" class="restore-bar" hidden></div>
+        <div id="menu-list" class="menu-admin-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>window.WBT_ADMIN = true;</script>
+  <script src="js/config.js?v=9"></script>
+  <script src="js/store.js?v=9"></script>
+  <script src="js/admin.js?v=9"></script>
+</body>
+</html>

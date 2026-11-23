@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisked by Trix | Menu</title>
+  <meta name="description" content="Classic, Seasalt, and Dream Matcha in 12oz and 16oz. Customize your cup and add to cart.">
+  <meta name="theme-color" content="#FEF6E1">
+  <meta property="og:title" content="Whisked by Trix | Menu">
+  <meta property="og:description" content="Classic, Seasalt, and Dream Matcha in 12oz and 16oz. Customize your cup and add to cart.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preload" href="assets/fonts/mali-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/menu.css?v=9">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand"><img src="assets/logo-small.jpg" alt="" width="42" height="42"><span><span class="b1">whisked</span> <span class="b2">by trix</span></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="menu.html" class="nav-btn active" aria-current="page">Menu</a>
+        <a href="inclusions.html" class="nav-btn">What You'll Get</a>
+        <a href="cart.html" class="cart-trigger">Cart (<span class="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <div class="section-header">
+      <h2>Matcha Menu</h2>
+      <p>Select your drink to customize size and matcha vibe.</p>
+    </div>
+
+    <div id="menu-grid" class="menu-grid">
+      <!-- Rendered dynamically by app.js -->
+    </div>
+    <noscript><p class="muted-text">Please enable JavaScript to view the menu and place an order.</p></noscript>
+  </main>
+
+  <!-- CUSTOMIZER MODAL -->
+  <div id="customizer-modal" class="modal-backdrop hidden">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-drink-name">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-drink-name">Classic Matcha</h3>
+          <p id="modal-drink-desc" class="muted-text">matcha, milk, agave</p>
+        </div>
+        <button type="button" class="close-btn" onclick="closeModal()" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="option-block">
+          <span class="option-label">1. Select Cup Size</span>
+          <div class="option-grid two-col" id="size-options"></div>
+        </div>
+
+        <div class="option-block">
+          <span class="option-label">2. Choose Your Matcha Vibe</span>
+          <div class="option-grid one-col">
+            <label class="select-card">
+              <input type="radio" name="matchaVibe" value="Whisk & Sip (Ready-to-drink)" checked>
+              <img class="vibe-thumb" src="assets/drinks/sip.webp" alt="" width="52" height="52">
+              <div><strong>Whisk &amp; Sip</strong><span>Ready-to-drink</span></div>
+            </label>
+            <label class="select-card">
+              <input type="radio" name="matchaVibe" value="Whisk & Pour (Matcha separate)">
+              <img class="vibe-thumb" src="assets/drinks/pour.webp" alt="" width="52" height="52">
+              <div><strong>Whisk &amp; Pour</strong><span>Whisked matcha served separately</span></div>
+            </label>
+            <label class="select-card">
+              <input type="radio" name="matchaVibe" value="Whisk & Make (Everything separated)">
+              <img class="vibe-thumb" src="assets/drinks/make.webp" alt="" width="52" height="52">
+              <div><strong>Whisk &amp; Make</strong><span>Everything separated</span></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="option-block">
+          <span class="option-label">3. Quantity</span>
+          <div class="qty-control">
+            <button type="button" onclick="changeModalQty(-1)" aria-label="Decrease quantity">−</button>
+            <span id="modal-qty" aria-live="polite">1</span>
+            <button type="button" onclick="changeModalQty(1)" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-primary full-width" onclick="confirmAddToCart()">
+          Add to Cart — <span id="modal-subtotal">₱215</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>🍵 Whisked by Trix · Calbayog City, Samar · Hand-whisked to order</p>
+    <p><a href="https://www.facebook.com/whiskedbytrix" target="_blank" rel="noopener">Find us on Facebook</a></p>
+  </footer>
+
+  <script src="js/fx.js?v=9" defer></script>
+  <script src="js/config.js?v=9"></script>
+  <script src="js/store.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+</body>
+</html>

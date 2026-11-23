@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisked by Trix | Hand-Whisked Matcha in Calbayog City</title>
+  <meta name="description" content="Hand-whisked matcha drinks delivered in Calbayog City. Choose Whisk & Sip, Whisk & Pour, or Whisk & Make.">
+  <meta name="theme-color" content="#FEF6E1">
+  <meta property="og:title" content="Whisked by Trix | Hand-Whisked Matcha in Calbayog City">
+  <meta property="og:description" content="Hand-whisked matcha drinks delivered in Calbayog City. Choose Whisk & Sip, Whisk & Pour, or Whisk & Make.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preload" href="assets/fonts/mali-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/home.css?v=9">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand"><img src="assets/logo-small.jpg" alt="" width="42" height="42"><span><span class="b1">whisked</span> <span class="b2">by trix</span></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html" class="nav-btn active" aria-current="page">Home</a>
+        <a href="menu.html" class="nav-btn">Menu</a>
+        <a href="inclusions.html" class="nav-btn">What You'll Get</a>
+        <a href="cart.html" class="cart-trigger">Cart (<span class="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="leaf l1"><svg viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M5 35C5 16 17 5 35 5c0 18-11 30-30 30z"/><path d="M5 35L27 13" stroke="#FEF6E1" stroke-width="1.6" fill="none" opacity=".7"/></svg></span><span class="leaf l2"><svg viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M5 35C5 16 17 5 35 5c0 18-11 30-30 30z"/><path d="M5 35L27 13" stroke="#FEF6E1" stroke-width="1.6" fill="none" opacity=".7"/></svg></span>
+      <div class="hero-copy">
+        <span class="pill">📍 Calbayog City</span>
+        <h1>Hand-whisked <em>matcha</em>, made fresh for you</h1>
+        <p class="lead">Creamy, earthy and made to order. Pick your vibe: ready to sip, pour it yourself, or whisk your own.</p>
+        <div class="hero-actions">
+          <a href="menu.html" class="btn-primary pulse">Order now</a>
+          <a href="inclusions.html" class="btn-outline">What you'll get</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <span class="cup left"><img src="assets/drinks/classic.webp" alt="Classic Matcha" width="376" height="403"></span>
+        <span class="cup right"><img src="assets/drinks/seasalt.webp" alt="Seasalt Matcha" width="386" height="420"></span>
+        <span class="cup main"><img src="assets/drinks/dream.webp" alt="Dream Matcha: iced matcha latte topped with crunchy cereal" width="349" height="398" fetchpriority="high"></span>
+        <span class="sticker price"><span>from<strong id="hero-from">₱215</strong></span></span>
+        <span class="sticker whisked">hand-whisked ♡</span>
+        <span class="spark s1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span><span class="spark s2"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span><span class="spark s3"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span><span class="spark s4"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee"><div class="marquee-track">
+        <span>hand-whisked</span><span>made fresh</span><span>calbayog city</span><span>matcha love</span><span>pick your vibe</span><span>hand-whisked</span><span>made fresh</span><span>calbayog city</span><span>matcha love</span><span>pick your vibe</span>
+      </div></div>
+    </div>
+
+    <section class="section" aria-labelledby="drinks-title">
+      <div class="section-head">
+        <h2 id="drinks-title">Our matcha drinks</h2>
+        <p>Three favorites, in 12oz and 16oz.</p>
+      </div>
+      <div id="featured-grid" class="featured-grid"></div>
+    </section>
+
+    <div class="band">
+      <section class="section" aria-labelledby="vibe-title">
+        <div class="section-head">
+          <h2 id="vibe-title">Pick your matcha vibe</h2>
+          <p>Every drink comes your way: ready, half-ready or fully DIY.</p>
+        </div>
+        <div class="vibe-grid">
+          <div class="vibe-card">
+            <img class="vibe-photo" src="assets/drinks/sip.webp" alt="Whisk &amp; Sip: ready-to-drink iced matcha" width="240" height="190" loading="lazy">
+            <span class="vibe-tag">Instant refreshment</span>
+            <h3>Whisk &amp; Sip</h3>
+            <p>Ready-to-drink, perfectly layered, and chilled when it arrives.</p>
+          </div>
+          <div class="vibe-card">
+            <img class="vibe-photo" src="assets/drinks/pour.webp" alt="Whisk &amp; Pour: milk cup with whisked matcha served separately" width="240" height="190" loading="lazy">
+            <span class="vibe-tag">Pour over</span>
+            <h3>Whisk &amp; Pour</h3>
+            <p>Freshly whisked matcha served separately. Just pour it over your milk and ice.</p>
+          </div>
+          <div class="vibe-card">
+            <img class="vibe-photo" src="assets/drinks/make.webp" alt="Whisk &amp; Make: milk cup with a cup of whisked matcha on the side" width="240" height="190" loading="lazy">
+            <span class="vibe-tag">DIY experience</span>
+            <h3>Whisk &amp; Make</h3>
+            <p>Everything separated so you can whisk your own fresh cup at home.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="section-head"><h2 id="how-title">How ordering works</h2></div>
+      <ol class="steps">
+        <li><strong>Choose your drink</strong>Pick a flavor, cup size and matcha vibe from the menu.</li>
+        <li><strong>Place your order</strong>Add your details and choose GCash or cash.</li>
+        <li><strong>We confirm &amp; deliver</strong>We'll message you on Messenger. If you paid by GCash, send us your screenshot.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <h2>Ready to sip?</h2>
+        <p>Freshly whisked in Calbayog City, delivered to your door.</p>
+        <a href="menu.html" class="btn-primary">See the menu</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>🍵 Whisked by Trix · Calbayog City, Samar · Hand-whisked to order</p>
+    <p><a href="https://www.facebook.com/whiskedbytrix" target="_blank" rel="noopener">Find us on Facebook</a></p>
+  </footer>
+
+  <script src="js/fx.js?v=9" defer></script>
+  <script src="js/config.js?v=9"></script>
+  <script src="js/store.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+</body>
+</html>
