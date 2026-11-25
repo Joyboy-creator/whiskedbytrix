@@ -1,4 +1,4 @@
-# How to change your website (after it's online) Testing
+# How to change your website (after it's online)
 
 Your site has two parts that you change in different places:
 
@@ -58,3 +58,8 @@ The Hojicha Latte is built into the site, but if your menu is already saved in F
 2. Click **Restore** in the yellow bar ("Missing from your menu: Hojicha Latte").
 3. **Set the real prices** on its card and click **Save changes**. Until you do, it uses placeholder prices (same as Classic Matcha).
 The small "NEW" tag on the card can be removed later: ask for it to be taken out, or delete `badge: 'NEW'` for it in `js/store.js`.
+
+## Admin shortcut
+- After you sign in at `yourlink/admin.html`, a pink **⚙ Admin** button appears in the menu bar of every page of the
+  website, **in that browser only**. Customers never see it. It disappears when you click Sign out.
+- The admin page has a **← Website** button to go back to the shop.
