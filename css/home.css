@@ -20,6 +20,8 @@ html { scroll-behavior: smooth; }
 body { overflow-x: clip; font-family: var(--font-body); font-size: 16px; background: var(--cream); color: var(--text); line-height: 1.55; min-height: 100vh; display: flex; flex-direction: column; -webkit-text-size-adjust: 100%; }
 h1, h2, h3, .brand { font-family: var(--font-head); font-weight: 700; line-height: 1.2; }
 img { max-width: 100%; }
+body { animation: pageIn .4s ease-out; }
+@keyframes pageIn { from { opacity: 0; } }
 [hidden] { display: none !important; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--pink); outline-offset: 2px; }
 .select-card:has(input:focus-visible), .radio-pill:has(input:focus-visible) { outline: 3px solid var(--pink); outline-offset: 2px; }
@@ -34,6 +36,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav-links { display: flex; align-items: center; gap: .2rem; flex-wrap: wrap; }
 .nav-btn { text-decoration: none; padding: .45rem .9rem; border-radius: 999px; font-size: .92rem; font-weight: 700; color: var(--muted); transition: background .15s, color .15s; }
 .nav-btn.active, .nav-btn:hover { color: var(--olive); background: rgba(52,85,30,.09); }
+.nav-btn.admin-link { background: var(--pink-soft); color: var(--pink-text); border: 2px solid var(--pink-line); padding: .3rem .85rem; }
+.nav-btn.admin-link:hover { background: var(--pink-line); color: var(--olive); }
 .cart-trigger { background: var(--olive); color: #fff; padding: .5rem 1.1rem; border-radius: 999px; text-decoration: none; font-size: .92rem; font-weight: 800; margin-left: .25rem; transition: background .15s; }
 .cart-trigger:hover, .cart-trigger.active { background: var(--olive-dark); }
 .cart-trigger.bump { animation: bump .35s; }
@@ -196,7 +200,6 @@ body.has-cartbar { padding-bottom: 92px; }
 .navbar.scrolled { box-shadow: 0 8px 22px rgba(52,85,30,.12); }
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
 .reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }
 .cart-bar.show { animation: barIn .45s cubic-bezier(.2,1.2,.4,1); }
 .cart-bar.bump { animation: barBump .45s; }
 @keyframes barIn { from { transform: translateY(130%); } }
