@@ -29,6 +29,7 @@ const $ = id => document.getElementById(id);
 const escHtml = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 document.addEventListener('DOMContentLoaded', async () => {
+  adminShortcut();
   updateCartCount();
   const num = $('gcash-number'); if (num) num.textContent = SETTINGS.gcashNumber;
   const nm = $('gcash-name'); if (nm) nm.textContent = SETTINGS.gcashName;
@@ -440,4 +441,16 @@ function confetti() {
   }
   document.body.appendChild(box);
   setTimeout(() => box.remove(), 4200);
+}
+
+/* Shows a small "Admin" button in the menu bar, but only in a browser where the owner has signed in to admin.html.
+   It is just a shortcut: the real protection is the admin login itself, so customers never see it. */
+function adminShortcut() {
+  let isAdmin = false;
+  try { isAdmin = localStorage.getItem('wbt_admin') === '1'; } catch (e) { /* storage blocked */ }
+  const links = document.querySelector('.nav-links');
+  if (!isAdmin || !links || links.querySelector('.admin-link')) return;
+  const a = document.createElement('a');
+  a.href = 'admin.html'; a.className = 'nav-btn admin-link'; a.textContent = '⚙ Admin';
+  links.insertBefore(a, links.querySelector('.cart-trigger'));
 }

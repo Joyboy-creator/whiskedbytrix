@@ -63,6 +63,7 @@ function show(id, on) { $(id).hidden = !on; }
 })();
 
 function enterLogin() {
+  try { localStorage.removeItem('wbt_admin'); } catch (e) { /* ignore */ }
   unsubOrders(); unsubOrders = () => {}; knownIds = null;
   show('dash-view', false); show('header-actions', false);
   show('login-view', Store.mode !== 'offline');
@@ -70,6 +71,7 @@ function enterLogin() {
 }
 
 function enterDashboard() {
+  try { localStorage.setItem('wbt_admin', '1'); } catch (e) { /* ignore */ }   // lets the public site show an Admin shortcut to you
   show('login-view', false); show('dash-view', true); show('header-actions', true);
   unsubOrders();
   unsubOrders = Store.watchOrders(onOrders, err => {
@@ -297,4 +299,3 @@ $('menu-list').addEventListener('click', async e => {
   try { await Store.deleteMenuItem(f.dataset.id); showToast('Deleted'); await loadMenu(); }
   catch (ex) { console.error(ex); showToast('Could not delete: ' + (ex.code || ex.message)); }
 });
-
