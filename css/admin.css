@@ -137,3 +137,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 .restore-x { background: none; border: none; font-size: 1rem; color: var(--text-muted); cursor: pointer; padding: .25rem .5rem; }
 
 .toolbar-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.login-back { text-align: center; margin-top: 1rem; font-size: .9rem; }
+.login-back a { color: var(--matcha-green); font-weight: 800; }
+body { animation: pageIn .4s ease-out; }
+@keyframes pageIn { from { opacity: 0; } }
